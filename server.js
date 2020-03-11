@@ -6,6 +6,9 @@ const App = express();
 // connect db
 connectDB();
 
+// Init middleware
+App.use(express.json({ extended: false }));
+
 const PORT = process.env.PORT || 5000;
 
 App.listen(PORT, () => {
