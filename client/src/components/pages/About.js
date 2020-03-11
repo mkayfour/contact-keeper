@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Home = props => {
   return (
@@ -12,7 +11,5 @@ const Home = props => {
     </div>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;

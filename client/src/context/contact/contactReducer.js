@@ -1,6 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
-
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
@@ -10,8 +7,6 @@ import {
   FILTER_CONTACTS,
   CLEAR_FILTER
 } from "../types";
-
-import contactContext from "./contactContext";
 
 export default (state, action) => {
   switch (action.type) {

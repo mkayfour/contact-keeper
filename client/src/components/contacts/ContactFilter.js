@@ -2,15 +2,15 @@ import React, { useContext, useEffect, useRef } from "react";
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactFilter = () => {
+  const contactContext = useContext(ContactContext);
+
+  const { filterContacts, clearFilter, filtered } = contactContext;
+
   useEffect(() => {
     if (filtered === null) {
       text.current.value = "";
     }
-  }, []);
-
-  const contactContext = useContext(ContactContext);
-
-  const { filterContacts, clearFilter, filtered } = contactContext;
+  }, [filtered]);
 
   const text = useRef("");
 
