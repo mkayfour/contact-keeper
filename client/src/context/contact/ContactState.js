@@ -37,7 +37,8 @@ const ContactState = props => {
         email: "sarahwatson@gmail.com",
         phone: "8975956469"
       }
-    ]
+    ],
+    current: null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -60,8 +61,19 @@ const ContactState = props => {
   };
 
   // Set current contact
+  const setCurrent = contact => {
+    dispatch({
+      type: SET_CURRENT,
+      payload: contact
+    });
+  };
 
   // Clear current contact
+  const clearCurrent = () => {
+    dispatch({
+      type: CLEAR_CURRENT
+    });
+  };
 
   // Update contact
 
@@ -74,7 +86,9 @@ const ContactState = props => {
       value={{
         contacts: state.contacts,
         addContact,
-        deleteContact
+        deleteContact,
+        setCurrent,
+        clearCurrent
       }}
     >
       {props.children}
