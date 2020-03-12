@@ -71,7 +71,6 @@ router.post(
       console.error(err.message);
       return res.status(500).json({ msg: "server error" });
     }
-    res.status(200);
   }
 );
 
