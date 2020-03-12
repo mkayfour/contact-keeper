@@ -25,9 +25,10 @@ const ContactForm = () => {
     type: "personal"
   });
 
-  const onChange = e =>
+  const onChange = e => {
+    console.log("change called", e.target.name, e.target.value);
     setContact({ ...contact, [e.target.name]: e.target.value });
-
+  };
   const { name, email, phone, type } = contact;
 
   const onSubmit = e => {
