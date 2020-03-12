@@ -98,7 +98,11 @@ const AuthState = props => {
   };
 
   // Logout User
-  const logout = async formData => {};
+  const logout = async => {
+    dispatch({
+      type: LOGOUT
+    });
+  };
 
   // clear error
   const clearError = async () => {
