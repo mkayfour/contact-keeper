@@ -16,7 +16,7 @@ App.listen(PORT, () => {
 });
 
 App.get("/", (req, res) =>
-  res.json({ msg: "Welcome to the Contact Keeper API " })
+  res.json({ msg: "Welcome to the Contact Book API " })
 );
 
 App.use("/api/users", require("./routes/users"));

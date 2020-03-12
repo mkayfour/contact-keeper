@@ -19,7 +19,7 @@ function Navbar({ title, icon }) {
         <li>Hello {user && user.name} </li>
 
         <li>
-          <a onClick={onLogout} href="#!">
+          <a onClick={onLogout} href="/login">
             <i className="fas fa-sign-out-alt">
               <span className="hide-sm">Logout</span>
             </i>
@@ -60,7 +60,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: "Contact Keeper",
+  title: "Contact Book",
   icon: "fas fa-id-card-alt"
 };
 
