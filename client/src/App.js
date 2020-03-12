@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navabar from "./components/layout/Navbar";
@@ -17,7 +17,7 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-function App() {
+const App = () => {
   return (
     <AuthState>
       <ContactState>
@@ -40,6 +40,6 @@ function App() {
       </ContactState>
     </AuthState>
   );
-}
+};
 
 export default App;

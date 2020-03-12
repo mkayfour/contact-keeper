@@ -13,13 +13,11 @@ const auth = require("../middleware/auth");
 router.get("/", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
-    res.json(user);
+    return res.json(user);
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ msg: "server error" });
-    return;
+    return res.status(500).json({ msg: "server error" });
   }
-  res.send("Get logged in User");
 });
 
 // @route POST api/auth
@@ -71,8 +69,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).json({ msg: "server error" });
-      return;
+      return res.status(500).json({ msg: "server error" });
     }
     res.status(200);
   }

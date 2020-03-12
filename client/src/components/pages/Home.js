@@ -8,7 +8,7 @@ import Spinner from "../../components/layout/Spinner";
 const Home = props => {
   const authContext = useContext(AuthContext);
 
-  const { loadUser } = authContext;
+  const { loadUser, loading } = authContext;
 
   useEffect(
     () => {
@@ -20,13 +20,19 @@ const Home = props => {
 
   return (
     <div className="grid-2">
-      <div>
-        <ContactForm />
-      </div>
-      <div>
-        <ContactFilter />
-        <Contacts />
-      </div>
+      {!loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <div>
+            <ContactForm />
+          </div>
+          <div>
+            <ContactFilter />
+            <Contacts />
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 };
